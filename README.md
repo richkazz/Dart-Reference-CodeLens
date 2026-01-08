@@ -72,7 +72,8 @@ You can configure the extension in your `settings.json`:
 | `dartReferenceCodeLens.showProperties` | `true` | Show reference counts for public properties |
 | `dartReferenceCodeLens.showConstructors` | `true` | Show reference counts for constructors |
 | `dartReferenceCodeLens.showEnums` | `true` | Show reference counts for enums |
-| `dartReferenceCodeLens.highlightUnused` | `true` | Show ⚠️ for symbols with 0 references |
+| `dartReferenceCodeLens.showVariables` | `true` | Show reference counts for top-level variables (e.g. Riverpod providers) |
+| `dartReferenceCodeLens.highlightUnused` | `true` | Show warning icon for symbols with 0 references |
 | `dartReferenceCodeLens.excludePatterns` | `["**/generated/**", "**/*.g.dart", "**/*.freezed.dart"]` | Files to exclude |
 | `dartReferenceCodeLens.minReferencesToShow` | `0` | Minimum references to show CodeLens |
 | `dartReferenceCodeLens.ignoredMethodNames` | `["build", "initState", "didChangeDependencies", ...]` | Flutter lifecycle methods to ignore |
