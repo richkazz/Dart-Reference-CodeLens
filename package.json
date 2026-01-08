@@ -1,0 +1,119 @@
+{
+  "name": "dart-reference-codelens",
+  "displayName": "Dart Reference CodeLens",
+  "description": "Shows reference counts for Dart classes, methods, and properties using LSP",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/richkazz/code-lense-flutter"
+  },
+  "version": "1.0.2",
+  "publisher": "richkazz",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "dart",
+    "flutter",
+    "codelens",
+    "reference",
+    "code metrics"
+  ],
+  "icon": "icon.png",
+  "activationEvents": [
+    "onLanguage:dart"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Dart Reference CodeLens",
+      "properties": {
+        "dartReferenceCodeLens.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable reference CodeLens"
+        },
+        "dartReferenceCodeLens.showClasses": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show reference counts for classes"
+        },
+        "dartReferenceCodeLens.showMethods": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show reference counts for methods/functions"
+        },
+        "dartReferenceCodeLens.showProperties": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show reference counts for public properties"
+        },
+        "dartReferenceCodeLens.showConstructors": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show reference counts for constructors"
+        },
+        "dartReferenceCodeLens.showEnums": {
+            "type": "boolean",
+            "default": true,
+            "description": "Show reference counts for enums"
+        },
+        "dartReferenceCodeLens.showVariables": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show reference counts for top-level variables (e.g. Riverpod providers)"
+        },
+        "dartReferenceCodeLens.highlightUnused": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show warning icon for symbols with 0 references"
+        },
+        "dartReferenceCodeLens.ignoredMethodNames": {
+          "type": "array",
+          "default": [
+            "build",
+            "initState",
+            "didChangeDependencies",
+            "didUpdateWidget",
+            "deactivate",
+            "dispose",
+            "createState",
+            "paint",
+            "shouldRepaint",
+            "debugFillProperties"
+          ],
+          "description": "List of method names to ignore for reference counting (e.g., Flutter lifecycle methods, Riverpod providers)."
+        },
+        "dartReferenceCodeLens.excludePatterns": {
+          "type": "array",
+          "default": [
+            "**/generated/**",
+            "**/*.g.dart",
+            "**/*.freezed.dart"
+          ],
+          "description": "Glob patterns for files to exclude from CodeLens generation"
+        },
+        "dartReferenceCodeLens.minReferencesToShow": {
+            "type": "number",
+            "default": 0,
+            "description": "Minimum references to show CodeLens"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "@types/vscode": "^1.74.0",
+    "typescript": "^4.9.4",
+    "vsce": "^2.15.0"
+  }
+}
